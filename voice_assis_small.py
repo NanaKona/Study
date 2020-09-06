@@ -82,7 +82,7 @@ def assistant(command):
     #assistant tells you its options
     elif 'help' in command:
         sofiaResponse('I am pulling up the options for you')
-        sofiaResponse("""
+        print("""
         You can use these commands and I'll help you out:
         1. Open reddit subreddit : Opens the subreddit in default browser.
         2. Open xyz.com : replace xyz with any website name
@@ -97,24 +97,16 @@ def assistant(command):
         12. top stories from google news (RSS feeds)
         13. tell me about xyz : tells you about xyz
         """)
-        pass
 
     #top stories from google news
     elif 'news' in command:
-        try:
-            news_url="https://news.google.com/news/rss"
-            Client=urlopen(news_url)
-            xml_page=Client.read()
-            Client.close()
-            soup_page=soup(xml_page,"xml")
-            news_list=soup_page.findAll("item")
-            for news in news_list[:15]:
-                sofiaResponse(news.title.text.encode('utf-8'))
-        except Exception as e:
-                print(e)
-       
-
-
+        sofiaResponse('Like Cody Show D?')
+        cody = myCommand()
+        if 'yes' in cody:
+            webbrowser.open("https://www.youtube.com/watch?v=i08F-Iy3zXI&list=PLkJemc4T5NYZpiVwtRDxXfZvcLzovtITo")
+        else:
+            webbrowser.open("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
+            sofiaResponse('Here you go')
 
 
 
