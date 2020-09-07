@@ -82,7 +82,7 @@ def assistant(command):
     #assistant tells you its options
     elif 'help' in command:
         sofiaResponse('I am pulling up the options for you')
-        sofiaResponse("""
+        print("""
         You can use these commands and I'll help you out:
         1. Open reddit subreddit : Opens the subreddit in default browser.
         2. Open xyz.com : replace xyz with any website name
@@ -119,7 +119,7 @@ def assistant(command):
 
 
 
-sofiaResponse('Robo Bobo Test')
+#sofiaResponse('Say Something')
 
 #loop to continue the commands
 while True:
